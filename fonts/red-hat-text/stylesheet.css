@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-Bold.woff2') format('woff2'),
+        url('RedHatText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-BoldItalic.woff2') format('woff2'),
+        url('RedHatText-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-LightItalic.woff2') format('woff2'),
+        url('RedHatText-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-Italic.woff2') format('woff2'),
+        url('RedHatText-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-Light.woff2') format('woff2'),
+        url('RedHatText-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-Regular.woff2') format('woff2'),
+        url('RedHatText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-Medium.woff2') format('woff2'),
+        url('RedHatText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-MediumItalic.woff2') format('woff2'),
+        url('RedHatText-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-SemiBoldItalic.woff2') format('woff2'),
+        url('RedHatText-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url('RedHatText-SemiBold.woff2') format('woff2'),
+        url('RedHatText-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
