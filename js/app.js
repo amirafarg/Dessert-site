@@ -9,6 +9,7 @@ const getNewOrder = document.querySelector(".now-order");
 const plusInput = document.querySelector(".no-spinner");
 const addedDiv = document.getElementById("added");
 const totalOrder = document.querySelector(".number");
+  const overlay = document.querySelector(".overlay");
 
 // دالة تحديث لمجمل الاوردر
 function updateTotale() {
@@ -24,6 +25,7 @@ cardProduct.forEach(card => {
     const minusBtn = card.querySelector(".minus");
     const input = card.querySelector("input");
     const ok = card.querySelector(".alright");
+    const imgProduct = card.querySelector("img").src;
 
     addBtn.addEventListener("click", () => {
         // const product = {
@@ -117,7 +119,7 @@ cardProduct.forEach(card => {
             updateTotale();
         });
 
-        cart.addItem({ name, price });
+        cart.addItem({ name, price, img: imgProduct });
         updateTotale();
 
         // عنوان الكارت وكميته
@@ -158,7 +160,7 @@ cardProduct.forEach(card => {
                 calcText.innerHTML = `
                 <span class="count">${value}</span>× $${price} = $${(value * price).toFixed(2)}`;
 
-                art.totalPrice -= price;
+                cart.totalPrice -= price;
                 updateTotale();
             }
         });
@@ -179,10 +181,86 @@ function clickToConvirt() {
     // card.classList.add('show');
 }
 
+// الطلب النهائي
 function clickToConfirm() {
     sec.classList.add('show');
     popup.classList.add('show');
+    overlay.classList.add("show");
+
+    const container = popup.querySelector(".popup-container");
+
+    container.innerHTML = "";
+
+    cart.item.forEach(item => {
+
+        const div = document.createElement("div");
+        div.classList.add("flex-added")
+
+        div.innerHTML = `
+        <div>
+            <div>
+                <img src="${item.img}" alt="">
+
+                <h6 class="h6-order">
+                    ${item.name} <br>
+                 <span class="bold">${item.quantity || 1}×</span>
+                 <span class="calc">$${item.price.toFixed(2)}</span>
+                </h6>
+            </div>
+
+            <span class="calc coor-span">$${((item.quantity || 1) * item.price).toFixed(2)}</span>
+        </div>
+        `;
+
+        container.appendChild(div);
+    });
+
+    const totalDiv = document.createElement("div");
+        totalDiv.classList.add("flex-added", "no-bottom");
+
+        totalDiv.innerHTML = `
+        <h6 class="the-total">Order Total</h6>
+        <span class="prc">$${cart.totalPrice.toFixed(2)}</span>
+        `;
+
+    container.appendChild(totalDiv);
 }
+
+// reset
+const startBtn = document.querySelector(".now-order");
+
+startBtn.addEventListener("click", () => {
+    // اخفاء البوباب
+    popup.classList.remove("show");
+    overlay.classList.remove("show");
+
+    // تصفير الكارت
+    cart.item = [];
+    cart.totalPrice = 0;
+
+    // تحديث العنوان
+    cartTitle.textContent = `Your Cart (0)`;
+
+    // رجوع الكارت الفاضي
+    imptyCart.classList.remove("hide");
+    addItemJs.classList.remove("show");
+
+    // 🟢 هنا المهم بقى
+    const allCards = document.querySelectorAll(".img-relative");
+
+    allCards.forEach(card => {
+        const addBtn = card.querySelector(".btn-cart");
+        const counter = card.querySelector(".abslt-add");
+        const ok = card.querySelector(".alright");
+        const input = card.querySelector("input");
+
+        // رجوع كل حاجة زي الأول
+        addBtn.style.display = "flex";
+        counter.style.display = "none";
+        ok.style.display = "none";
+        input.value = 1;
+    });
+});
 
 function clickToRemove() {
     sec.classList.remove('show');
