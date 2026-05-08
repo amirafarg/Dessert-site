@@ -372,8 +372,8 @@ input {
 .alright {
   position: absolute;
   bottom: 14.5rem;
-  left: 40%;
-  transform: translateX(50%);
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
 }
 
@@ -532,6 +532,10 @@ input {
     padding: 1;
   }
 
+  .alright {
+    bottom: 14rem;
+  }
+
   .rows {
     padding: 2rem;
   }
@@ -545,9 +549,6 @@ input {
     justify-content: center;
     align-items: center;
     max-width: 100%;
-  }
-
-  .finish {
   }
 
   /* .flex-added {
