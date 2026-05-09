@@ -9,7 +9,7 @@ const getNewOrder = document.querySelector(".now-order");
 const plusInput = document.querySelector(".no-spinner");
 const addedDiv = document.getElementById("added");
 const totalOrder = document.querySelector(".number");
-  const overlay = document.querySelector(".overlay");
+const overlay = document.querySelector(".overlay");
 
 // دالة تحديث لمجمل الاوردر
 function updateTotale() {
@@ -173,14 +173,6 @@ removeCard.addEventListener('click', clickToRemove);
 getNewOrder.addEventListener('click', removeByBtn);
 
 
-function clickToConvirt() {
-    // clickAdd.classList.add('show');
-    // show.classList.add('show');
-    // added.classList.add('show');
-    // none.classList.add('show');
-    // card.classList.add('show');
-}
-
 // الطلب النهائي
 function clickToConfirm() {
     sec.classList.add('show');
@@ -216,9 +208,9 @@ function clickToConfirm() {
     });
 
     const totalDiv = document.createElement("div");
-        totalDiv.classList.add("flex-added", "no-bottom");
+    totalDiv.classList.add("flex-added", "no-bottom");
 
-        totalDiv.innerHTML = `
+    totalDiv.innerHTML = `
         <h6 class="the-total">Order Total</h6>
         <span class="prc">$${cart.totalPrice.toFixed(2)}</span>
         `;
@@ -245,7 +237,6 @@ startBtn.addEventListener("click", () => {
     imptyCart.classList.remove("hide");
     addItemJs.classList.remove("show");
 
-    // 🟢 هنا المهم بقى
     const allCards = document.querySelectorAll(".img-relative");
 
     allCards.forEach(card => {
